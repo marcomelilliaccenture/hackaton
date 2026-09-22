@@ -1,0 +1,14 @@
+[
+  {"query": "devo preparare la presentazione per l'hackathon di venerdi, ho 5 minuti di slot", "should_trigger": true},
+  {"query": "crea la ppt per presentare la nostra idea alla giuria", "should_trigger": true},
+  {"query": "mi serve un deck Accenture per il pitch di domani", "should_trigger": true},
+  {"query": "come struttturo un pitch di 3 minuti per il demo day?", "should_trigger": true},
+  {"query": "prepara le slide dell'idea per l'innovation challenge interna", "should_trigger": true},
+  {"query": "rivedi questa presentazione dell'idea, la giuria la valuta domani mattina", "should_trigger": true},
+  {"query": "make a pitch deck for our hackathon project, 10 slides", "should_trigger": true},
+  {"query": "crea un report Word con il riepilogo delle attivita del trimestre", "should_trigger": false},
+  {"query": "aggiorna il README del progetto con le istruzioni di installazione", "should_trigger": false},
+  {"query": "fai un grafico delle vendite mensili in Excel", "should_trigger": false},
+  {"query": "estrai il testo da questo pptx del cliente e mettilo in una mail", "should_trigger": false},
+  {"query": "scrivi i test Playwright per il componente di login", "should_trigger": false}
+]

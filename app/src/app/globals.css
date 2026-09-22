@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --paper: #ffffff;
+  --paper-warm: #f5f2ec;
+  --rule: #d8d2c7;
+  --accent: #0f5d5a;
+  --accent-weak: #e3efee;
+  --alert: #b3261e;
+  --alert-weak: #fcefee;
+  --warn: #7a4b00;
+  --warn-weak: #fff4e0;
+  --ok: #1e6b3a;
+  --focus: #0b4f8a;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--paper-warm);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem; /* 17px, mai sotto 16px */
+  line-height: 1.6;
+}
+
+/* Anello di focus: 3px, offset 2px, sempre visibile (docs/ux-spec.md §2). */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* `.no-print` esiste SOLO dentro @media print: a schermo non deve cambiare
+   niente (altrimenti sovrascriverebbe il display delle utility). */
+
+/* `.solo-stampa` e' l'opposto: esiste a schermo (per nasconderlo) e dentro
+   @media print (per mostrarlo). Lo usa il facsimile del Modulo 1, che ha senso
+   solo su carta. */
+.solo-stampa {
+  display: none;
+}
+
+/* A-12 — la stampa di /riepilogo (docs/ux-spec.md §9).
+   Nero su bianco, A4, margini 15mm, 12pt: Fatou stampa da un internet point o
+   dal datore di lavoro, quasi sempre in bianco e nero. Niente che dipenda dal
+   colore, e niente che non serva allo sportello. */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  html,
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  /* Tutto in nero su bianco: nessuna informazione affidata al colore. */
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    border-color: #000 !important;
+  }
+
+  /* Via: intestazione, piede, navigazione, avanzamento, bottoni, banner della
+     scadenza, selettore di lingua, e tutto cio' che e' marcato .no-print. */
+  header,
+  footer,
+  nav,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Il facsimile del Modulo 1: a schermo non esiste, su carta viene per primo e si
+     chiude da solo — gli allegati e i costi iniziano sul foglio dopo, cosi' il foglio
+     del modulo si tiene accanto al kit senza il resto attorno. */
+  .solo-stampa {
+    display: block !important;
+    break-after: page;
+  }
+
+  /* Resta tutto il resto: dati con i numeri di casella, proposta per la 25,
+     avviso sulla firma, checklist degli allegati, data di scadenza. Un
+     pannello chiuso resta chiuso; uno aperto si stampa. */
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* I link diventano testo con l'indirizzo fra parentesi. */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+  }
+
+  /* Le sezioni non si spezzano a meta' pagina se si puo' evitare. */
+  section,
+  li,
+  tr {
+    break-inside: avoid;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 1px solid #000 !important;
+  }
+
+  /* Le caselle da spuntare a penna devono restare visibili in bianco e nero. */
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14pt;
+    height: 14pt;
+    border: 1pt solid #000 !important;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /tmp)",
+      "Bash(py -c \"import sys,json;d=json.load\\(sys.stdin\\);print\\('\\\\n'.join\\(x['name']+' | '+x['type'] for x in d\\)\\)\")",
+      "Bash(py -c ' *)",
+      "Bash(sort -k2)",
+      "Bash(mkdir -p docs/sources)",
+      "Bash(ls -la docs/sources/)",
+      "Bash(file docs/sources/*.pdf)",
+      "Bash(powershell -NoProfile -Command \"Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force\")"
+    ]
+  }
+}

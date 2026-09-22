@@ -1,0 +1,35 @@
+[
+  {"_comment": "Shape ids come from: deck_text.py dump <deck>. They change at every build.",
+
+   "slide": 1, "shape": 3,
+   "text": "Il triage di una richiesta di modifica costa 40 minuti"},
+
+  {"slide": 1, "shape": 5, "text": "Team <nome> · track <track>"},
+  {"slide": 1, "shape": 7, "delete": true},
+  {"slide": 1, "notes": "Apri sul numero, non sui nomi. 20 secondi. Poi: 'e non e' il tempo di lavoro, e' il tempo di attesa'."},
+
+  {"slide": 2, "shape": 15,
+   "text": ["Tre strumenti, due persone, quaranta minuti.",
+            "Nessuno dei due decide niente."]},
+  {"slide": 2, "notes": "25 secondi. Transizione: 'l'idea e' togliere l'attesa, non le persone'."},
+
+  {"slide": 3, "shape": 3, "row": 0, "col": 0, "text": "Oggi"},
+  {"slide": 3, "shape": 3, "row": 0, "col": 1, "text": "Con l'agente"},
+  {"slide": 3, "shape": 3, "row": 1, "col": 0,
+   "text": "3 tool, 2 passaggi manuali, 40 minuti medi per richiesta"},
+  {"slide": 3, "shape": 3, "row": 1, "col": 1,
+   "text": "1 proposta automatica, 1 approvazione umana, 6 minuti"},
+
+  {"slide": 4, "shape": 2, "text": "La demo: dalla mail alla classificazione approvata"},
+  {"slide": 4, "shape": 8, "text": "Guardate il momento dell'approvazione: l'umano resta nel loop."},
+  {"slide": 4, "notes": "45 secondi. Clip registrata. Dire subito cosa e' reale e cosa e' simulato."},
+
+  {"slide": 5, "shape": 13, "text": ["40 min", "tempo medio oggi (fonte: estrazione ITSM 09-2026)"]},
+  {"slide": 5, "shape": 23, "text": ["6 min", "tempo medio con l'agente (misura su 50 casi di test)"]},
+  {"slide": 5, "shape": 24, "text": ["120", "richieste a settimana nel perimetro pilota"]},
+
+  {"slide": 6, "shape": 2, "text": "Cosa e' reale, cosa manca"},
+
+  {"slide": 7, "shape": 24, "text": "Ci serve un pilota su un team reale per quattro settimane"},
+  {"slide": 7, "notes": "Chiudi qui. Una sola richiesta. Poi silenzio."}
+]
