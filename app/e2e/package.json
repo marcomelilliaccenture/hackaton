@@ -1,0 +1,17 @@
+{
+  "name": "kit209-e2e",
+  "private": true,
+  "description": "Verifica del percorso end-to-end e produzione delle evidenze. Separato da app/ di proposito: npm test in app/ e' il gate 1 e deve restare veloce.",
+  "scripts": {
+    "test": "playwright test",
+    "test:a11y": "playwright test tests/a11y.spec.ts",
+    "test:percorso": "playwright test tests/percorso.spec.ts",
+    "evidence": "playwright test tests/evidenza.spec.ts",
+    "report": "playwright show-report",
+    "setup": "npm install && playwright install chromium"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.48.0"
+  }
+}
