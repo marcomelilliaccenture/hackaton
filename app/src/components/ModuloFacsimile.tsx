@@ -17,6 +17,9 @@ import { SourceNote } from "./SourceNote";
  * dichiarate in fondo. Le caselle chieste e lasciate vuote restano visibili e numerate.
  */
 
+/** Ancora del facsimile nella pagina (usata dalla stampa e dalle verifiche). */
+export const FACSIMILE_ID = "facsimile";
+
 export interface FacsimileRiga {
   /** numero di casella del modulo, da 1 a 173 */
   casella: number;
@@ -66,7 +69,7 @@ export function ModuloFacsimile({
   })).filter((gruppo) => gruppo.righe.length > 0 || gruppo.nota !== undefined);
 
   return (
-    <section className={className} aria-labelledby="facsimile-titolo">
+    <section id={FACSIMILE_ID} className={className} aria-labelledby="facsimile-titolo">
       <h2 id="facsimile-titolo" className="m-0 text-[1.25rem] font-semibold">
         {t("facsimile.titolo")}
       </h2>

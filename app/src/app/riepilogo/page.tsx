@@ -50,6 +50,9 @@ const DA_PORTARE: { id: string; key: string; evidenza?: boolean }[] = [
 const CASELLA_FOGLI = 25;
 const CASELLA_FIRMA = 29;
 
+/** Il MOD. 209 Modulo 1 (F9) compilato, in `app/public/`. */
+const MODULO_COMPILATO = "/mod-209-modulo-1-compilato.pdf";
+
 interface Riga {
   casella: number;
   labelKey: string;
@@ -314,13 +317,17 @@ export default function RiepilogoPage() {
           {t("riepilogo.h1")}
         </h1>
         <p className="m-0">{t("riepilogo.intro")}</p>
-        <button
-          type="button"
-          onClick={() => window.print()}
+        {/* Il MOD. 209 ufficiale (F9) con i valori scritti nelle caselle, una lettera per
+            quadratino. ATTENZIONE: per la demo il file e' generato una volta con i dati
+            d'esempio e servito da public/ — non e' ancora costruito dai valori digitati.
+            Dichiarato in docs/ai-contributions.md. */}
+        <a
+          href={MODULO_COMPILATO}
+          download
           className="no-print inline-flex min-h-[48px] w-full items-center justify-center rounded bg-accent px-6 py-3 text-base font-semibold text-paper sm:w-auto"
         >
-          {t("riepilogo.stampa.cta")}
-        </button>
+          {t("riepilogo.scarica.cta")}
+        </a>
         <p className="no-print m-0 text-[0.9375rem] text-ink-soft">
           {t("riepilogo.stampa.cosaEsce")}
         </p>

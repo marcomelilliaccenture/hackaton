@@ -45,7 +45,7 @@ export function SiteFooter() {
         </nav>
 
         {/* Dichiarato, non nascosto: il finto si dice. */}
-        <p className="m-0 text-[0.9375rem]">{t("footer.segnaposto")}</p>
+        {/* <p className="m-0 text-[0.9375rem]">{t("footer.segnaposto")}</p> */}
 
         <p className="m-0 text-[0.9375rem]">{t("footer.copyright")}</p>
       </div>
